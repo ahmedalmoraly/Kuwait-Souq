@@ -170,37 +170,37 @@ static GoogleAdsController *sharedController = nil;
 }
 
 - (void)createGoogleAds{
-    if (_googleAdBannerView == nil) {
-        CGRect frame;
-        
-        //create size depending on device and orientation
-        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
-            frame = CGRectMake(0.0f, self.containerView.frame.size.height, 
-                               GAD_SIZE_728x90.width, 
-                               GAD_SIZE_728x90.height);
-        }
-        else{
-            frame = CGRectMake(0.0f, 
-                               self.containerView.frame.size.height, 
-                               GAD_SIZE_320x50.width, 
-                               GAD_SIZE_320x50.height);
-        }
-        
-        _googleAdBannerView = [[GADBannerView alloc] initWithFrame:frame];
-        [self recenterGoogleAdBannerView];
-        [[self googleAdBannerView] setAdUnitID:kGoogleAdId];
-        
-        [[self googleAdBannerView] setRootViewController:[self parentViewController]];
-        [[self googleAdBannerView] setDelegate:self];
-        GADRequest *request = [GADRequest request];
-        request.testDevices = [NSArray arrayWithObjects:
-                               GAD_SIMULATOR_ID,                       
-                               nil];
-        [[self googleAdBannerView] loadRequest:request];
-        
-        [[self containerView] addSubview:[self googleAdBannerView]];
-        [[self containerView] sendSubviewToBack:[self googleAdBannerView]];
-    }
+//    if (_googleAdBannerView == nil) {
+//        CGRect frame;
+//        
+//        //create size depending on device and orientation
+//        if (UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiomPad) {
+//            frame = CGRectMake(0.0f, self.containerView.frame.size.height, 
+//                               GAD_SIZE_728x90.width, 
+//                               GAD_SIZE_728x90.height);
+//        }
+//        else{
+//            frame = CGRectMake(0.0f, 
+//                               self.containerView.frame.size.height, 
+//                               GAD_SIZE_320x50.width, 
+//                               GAD_SIZE_320x50.height);
+//        }
+//        
+//        _googleAdBannerView = [[GADBannerView alloc] initWithFrame:frame];
+//        [self recenterGoogleAdBannerView];
+//        [[self googleAdBannerView] setAdUnitID:kGoogleAdId];
+//        
+//        [[self googleAdBannerView] setRootViewController:[self parentViewController]];
+//        [[self googleAdBannerView] setDelegate:self];
+//        GADRequest *request = [GADRequest request];
+//        request.testDevices = [NSArray arrayWithObjects:
+//                               GAD_SIMULATOR_ID,                       
+//                               nil];
+//        [[self googleAdBannerView] loadRequest:request];
+//        
+//        [[self containerView] addSubview:[self googleAdBannerView]];
+//        [[self containerView] sendSubviewToBack:[self googleAdBannerView]];
+//    }
 }
 
 - (void)recenterGoogleAdBannerView{

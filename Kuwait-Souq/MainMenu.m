@@ -87,7 +87,7 @@ struct ButtonProperty {
             break;
             
         case 3:
-            //if (userLoginState)
+            if (userLoginState)
             {
                 if (iPhone) {
                     adds = [[Add_Ads alloc] initWithNibName:@"AddAdsLoginState_iPhone" bundle:nil];                    
@@ -96,7 +96,7 @@ struct ButtonProperty {
                 }
                 [self.navigationController pushViewController:adds animated:YES];
             }
-            //else
+            else
             {
                 [[[[UIAlertView alloc] initWithTitle:@"عفواً" message:@"لإضافة اعلان جديد فضلا قم بتسجيل الدخول" delegate:nil cancelButtonTitle:@"موافق" otherButtonTitles: nil] autorelease] show];
             }

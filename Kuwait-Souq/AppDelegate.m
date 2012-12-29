@@ -11,7 +11,6 @@
 #import "Global.h"
 #import "Reachability.h"
 #import "NetworkOperations.h"
-#import "GANTracker.h"
 #import <FacebookSDK/FacebookSDK.h>
 
 static const NSInteger kGANDisPatchPeriodSec = 10;
@@ -41,16 +40,16 @@ static const NSInteger kGANDisPatchPeriodSec = 10;
     
     [[UIApplication sharedApplication] registerForRemoteNotificationTypes:(UIRemoteNotificationTypeAlert | UIRemoteNotificationTypeBadge | UIRemoteNotificationTypeSound)];
     
-    [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-28541935-1" dispatchPeriod:kGANDisPatchPeriodSec delegate:nil];
-    
-    NSError *error;
-    if (![[GANTracker sharedTracker] trackPageview:@"/app_entry_point" withError:&error]) {
-        NSLog(@"[ERROR]: %@", error);
-    }
-    
-    
-    [[GANTracker sharedTracker] trackPageview:@"" withError:nil];
-    
+//    [[GANTracker sharedTracker] startTrackerWithAccountID:@"UA-28541935-1" dispatchPeriod:kGANDisPatchPeriodSec delegate:nil];
+//    
+//    NSError *error;
+//    if (![[GANTracker sharedTracker] trackPageview:@"/app_entry_point" withError:&error]) {
+//        NSLog(@"[ERROR]: %@", error);
+//    }
+//    
+//    
+//    [[GANTracker sharedTracker] trackPageview:@"" withError:nil];
+//    
     [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(reachabilityDidChangedWithNotification:) name:kReachabilityChangedNotification object:nil];
     
     [[Reachability reachabilityWithHostname:@"www.sooqalq8.com"] startNotifier];
